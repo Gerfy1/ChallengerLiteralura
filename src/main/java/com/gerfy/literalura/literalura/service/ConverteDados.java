@@ -23,10 +23,10 @@ public class ConverteDados implements IConverteDados {
                 var s = node.get("results").get(0).get("authors").get(0);
                 resultado = mapper.treeToValue(s, classe);
             } else {
-                resultado = mapper.readValue(json,classe);
+                resultado = mapper.readValue(json, classe);
             }
         } catch (JsonProcessingException e) {
-            e.getStackTrace();
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
         return resultado;

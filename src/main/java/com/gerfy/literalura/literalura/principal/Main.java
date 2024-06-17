@@ -118,14 +118,14 @@ public class Main {
     private void buscarLivro() {
         System.out.println("Qual livro você deseja?: ");
         var busca = leitura.nextLine();
-        var dados = consumo.obterDados(EnderecoAPI + busca.replace(" ", "%20"));
+        var dados = consumo.obterDados(EnderecoAPI+busca.replace(" ", "%20"));
         salvarDados(dados);
     }
 
     private void salvarDados(String dados) {
         try {
             Livro livro = new Livro(converteDados.obterDados(dados, DadosLivro.class));
-            Autor autor = new Autor(converteDados.obterDados(dados, Autor.class));
+            Autor autor = new Autor(converteDados.obterDados(dados, DadosAutor.class));
             Autor autorData = null;
             Livro livroData = null;
             if (!repositoryAutor.existsByNome(autor.getNome())) {

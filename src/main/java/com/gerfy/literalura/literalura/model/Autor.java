@@ -20,7 +20,7 @@ public class Autor {
     private List<Livro> livros = new ArrayList<>();
 
     public Autor() {}
-    public Autor(Autor dados) {
+    public Autor(DadosAutor dados) {
         this.nome = dados.nomeAutor();
         this.anoNascimento = dados.anoNascimento();
         this.anoMorte = dados.anoMorte();
@@ -84,7 +84,7 @@ public class Autor {
     public String toString() {
         return
                 "\nNome: " + nome + " | " +
-                        "\nAno de nascimento" + anoNascimento + " | " +
-                        "\nAno de falecimento" + anoMorte + " | ";
+                        "\nAno de nascimento: " + anoNascimento + " | " +
+                        "\nAno de falecimento: " + anoMorte + " | ";
     }
 }
